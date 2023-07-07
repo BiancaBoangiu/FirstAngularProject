@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+.row{
+    border-bottom: 1px solid #000;
+    
+}
+
+.head-row{
+    border-top: 1px solid #000;
+}
+
+.col-1, .col-2, .col-3{
+    border-right: 1px solid #000;
+    padding: 10px;
+}
+
+.col-1{
+    border-left: 1px solid #000;
+}

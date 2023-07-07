@@ -1,0 +1,18 @@
+
+<p *ngIf="!people.length">No user entries</p>
+<div class="section mb-2" *ngIf="people.length">
+    <div class="row head-row">
+      <div class="col-1 text-center fw-bold">#</div>
+      <div class="col-2 text-center fw-bold ">First Name</div>
+      <div class="col-3 text-center fw-bold">Last Name</div>
+      <div class="col-3 text-center fw-bold">Email</div>
+      <div class="col-3 text-center fw-bold">Actions</div>
+</div>
+<div class="section mb-2">
+  <app-person-row *ngFor="let person of people; let i = index" [index]="i" [person]="person"  (deletePerson)="onDeleteClick($event)"></app-person-row>
+</div>
+
+<div>
+  <app-list></app-list>
+</div>
+
