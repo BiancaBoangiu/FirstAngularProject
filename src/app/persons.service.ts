@@ -8,14 +8,14 @@ export class PersonsService {
   people: People[] = [];
   selectedPeople!: People;
   isEditing!: boolean;
-  actions: string[] = [];
+  messages: string[] = [];
 
   addToAray(person: People): void {
     this.people.push(person);
   }
 
-  addActionToArray(): any {
-    this.actions.push('A person have been added');
+  addMessageToArray(message: string) {
+    this.messages.push(message);
   }
   constructor() {}
 }

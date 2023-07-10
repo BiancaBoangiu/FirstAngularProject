@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { PersonsService } from '../persons.service';
-import { People } from '../people';
 
 @Component({
   selector: 'app-modal-component',
@@ -15,7 +14,6 @@ export class ModalComponent {
   email: string = '';
   description: string = '';
   isEditing: boolean;
-  actionsArray!: string[];
 
   onSaveChanges(): void {
     if (this.personsService.selectedPeople && this.personsService.isEditing) {
@@ -23,6 +21,7 @@ export class ModalComponent {
       this.personsService.selectedPeople.lastName = this.lastName;
       this.personsService.selectedPeople.email = this.email;
       this.personsService.selectedPeople.description = this.description;
+      this.personsService.addMessageToArray('User edited');
       this.personsService.isEditing = false;
     } else {
       if (
@@ -41,7 +40,9 @@ export class ModalComponent {
         description: this.description,
       });
 
-      this.actionsArray = this.personsService.addActionToArray();
+      if (!this.personsService.isEditing) {
+        this.personsService.addMessageToArray('User added');
+      }
     }
 
     this.error = '';

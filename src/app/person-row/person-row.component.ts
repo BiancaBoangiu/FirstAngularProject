@@ -18,6 +18,7 @@ export class PersonRowComponent {
   constructor(private personsService: PersonsService) {}
 
   delete(person: People): void {
+    this.personsService.addMessageToArray('User deleted');
     this.deletePerson.emit(person);
   }
 

@@ -7,10 +7,16 @@ import { AppComponent } from './app.component';
 import { TableComponent } from './table/table.component';
 import { ModalComponent } from './modal/modal.component';
 import { PersonRowComponent } from './person-row/person-row.component';
-import { ListComponent } from './list/list.component';
+import { MessagesComponent } from './messages/messages.component';
 
 @NgModule({
-  declarations: [AppComponent, TableComponent, ModalComponent, PersonRowComponent, ListComponent],
+  declarations: [
+    AppComponent,
+    TableComponent,
+    ModalComponent,
+    PersonRowComponent,
+    MessagesComponent,
+  ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
